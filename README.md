@@ -1,10 +1,10 @@
-# Sistem Antrian Pelayanan Bank
+# Undo / Redo
 
 Semester Genap 2025/2026
 
 ## Kelompok
 - I Gede Anggara Suryantara (2501010013)
-- Anak Agung Gede Anom Rangga Pratama (25010100)
+- Anak Agung Gede Anom Rangga Pratama (2501010017)
 
 ## BAB 1 — Rumusan Masalah
 
@@ -14,7 +14,7 @@ Semester Genap 2025/2026
 
 ---
 
-### 1.2 Solusi yang Ditawarkan
+### 1.2 -
 
 ---
 
@@ -34,7 +34,7 @@ Semester Genap 2025/2026
 
 ---
 
-### 3.2 Alur Sistem (Input → Proses → Output
+### 3.2 Alur Sistem
 
 ---
 
@@ -46,7 +46,7 @@ Semester Genap 2025/2026
 
 ---
 
-### 3.5 Implementasi Operasi Queue
+### 3.5 Implementasi Operasi
 
 ---
 
