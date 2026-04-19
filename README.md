@@ -3,6 +3,7 @@
 Semester Genap 2025/2026
 
 ## Kelompok
+
 - I Gede Anggara Suryantara (2501010013)
 - Anak Agung Gede Anom Rangga Pratama (2501010017)
 
@@ -11,6 +12,7 @@ Semester Genap 2025/2026
 ---
 
 ### 1.1 Rumusan Masalah
+
 Berdasarkan permasalahan dalam fitur _undo/redo_ pada aplikasi _text editor_, dirumuskan beberapa pertanyaan pada laporan ini sebagai berikut:
 1. Bagaimana konsep _stack_ (tumpukan) dengan prinsip LIFO (_Last In_, _First Out_) dapat digunakan untuk mengimplementasikan mekanisme _undo_ dan _redo_ pada sebuah _text editor_ secara efisien?
 2. Bagaimana penggunaan dua buah _stack_ secara bersamaan, yaitu _undo stack_ dan _redo stack_, mampu mengelola riwayat perubahan teks sehingga pengguna dapat berpindah maju dan mundur antar kondisi?
@@ -19,6 +21,7 @@ Berdasarkan permasalahan dalam fitur _undo/redo_ pada aplikasi _text editor_, di
 ---
 
 ### 1.2 Solusi yang Ditawarkan
+
 Sistem yang dirancang memberikan solusi sebagai berikut:
 1. Menggunakan dua _stack_ berbasis _linked list_: _Undo stack_ untuk menyimpan riwayat kondisi teks sebelumnya, dan _redo stack_ untuk menyimpan kondisi yang telah di-_undo_.
 2. Setiap kali pengguna mengedit teks, kondisi teks sebelumnya di-_push_ ke _undo stack_, dan _redo stack_ dikosongkan (karena jalur histori berubah).
@@ -33,26 +36,31 @@ Sistem yang dirancang memberikan solusi sebagai berikut:
 ---
 
 ### 2.1 Pengertian Struktur Data
+
 Struktur data adalah representasi logis dari hubungan antar data yang disimpan dalam memori komputer. Menurut Cormen et al. (2009) dalam _Introduction to ALgorithms_, pemilihan struktur data yang tepat dapat mempercepat waktu eksekusi algoritma secara signifikan. Struktur data liniear seperti _stack_, _queue_, dan _linked list_ banyak digunakan dalam pengembangan perangkat lunak karena kemudahan implementasi dan efisiensinya dalam operasi akses sekuensial.
 
 ---
 
 ### 2.2 Konsep _Stack_ dan _Queue_
+
 _Stack_ (tumpukan) dan _queue_ (antrean) adalah dua struktur data linier fundamental yang dibedakan oleh cara elemen diakses. _Stack_ adalah sekumpulan elemen di mana penambahan dan penghapusan data hanya terjadi pada satu ujung yang sama, yang dikenal sebagai bagian atas (_top_). Sebaliknya, _queue_ adalah struktur data yang memungkinkan penambahan elemen di satu ujung (_rear_) dan penghapusan di ujung lainnya (_front_). Menurut Weiss (2012) dalam _Data Structures and Algorithm Analysis in C++_, stack dan queue merupakan struktur data linier dengan mekanisme akses LIFO dan FIFO yang banyak digunakan dalam berbagai aplikasi komputasi.
 
 ---
 
 ### 2.3 Konsep LIFO dan FIFO
+
 Konsep LIFO dan FIFO pada _stack_ dan _queue_ yang membedakan urutan pengolahan data. _Stack_ menerapkan prinsip LIFO (_Last In_, _First Out_), di mana data yang terakhir masuk akan menjadi yang pertama keluar. Sebaliknya, _queue_ menerapkan prinsip FIFO (_First In_, _First Out_), di mana data yang pertama kali masuk akan menjadi yang pertama keluar. Menurut Prata (2020) dalam _C++ Primer Plus_, pemahaman terhadap LIFO dan FIFO sangat penting dalam menentukan apakah sebuah program harus memprioritaskan data terbaru atau data yang paling lama menunggu.
 
 ---
 
-### 2.4 Implementasi Menggunakan _Array_ atau _Linked List_ <br>
+### 2.4 Implementasi Menggunakan _Array_ atau _Linked List_
+
 Dalam implementasinya, _stack_ dan _queue_ dapat dibangun menggunakan _array_ maupun _linked list_. Implementasi berbasis _array_ berukuran tetap (_fixed-size_) mengharuskan kapasitas ditentukan di awal, namun memiliki keunggulan dalam hal _locality of reference_ yang mendukung akses memori lebih cepat. Sebaliknya, menurut Goodrich dan Tamassia (2014) dalam _Data Structures and Algorithms in Python_, _linked list_ menggunakan alokasi memori dinamis sehingga tidak memerlukan kapasitas awal yang tetap. Oleh karena itu, _linked list_ lebih fleksibel untuk kasus di mana jumlah data dalam antrean atau tumpukan tidak dapat diprediksi sejak awal.
 
 ---
 
 ### 2.5 Referensi
+
 -	Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to Algorithms (3rd ed.). MIT Press.
 -	Goodrich, M. T., & Tamassia, R. (2014). Data Structures and Algorithms in Python. Wiley.
 -	Prata, S. (2020). C++ Primer Plus (6th ed.). Addison-Wesley.
@@ -65,7 +73,8 @@ Dalam implementasinya, _stack_ dan _queue_ dapat dibangun menggunakan _array_ ma
 ---
 
 ### 3.1 Deskrpsi Sistem
-Sistem _undo/redo text editor_ adalah aplikasi berbasis _Phyton_ yang mensimulasikan mekanisme riwayat pengeditan teks. Pengguna dapat menuliskan teks baru, membatalkan perubahan (_undo_), mengulangi perubahan yang dibatalkan (_redo_), melihat elemen teratas stack (_peek_), dan menampilkan seluruh riwayat perubahan (_display_). Sistem menggunakan dua _stack_ berbasis _linked list_ yang bekerja secara bersamaan.
+
+Sistem _undo/redo text editor_ adalah aplikasi berbasis _Phyton_ yang mensimulasikan mekanisme riwayat pengeditan teks. Pengguna dapat menuliskan teks baru, membatalkan perubahan (_undo_), mengulangi perubahan yang dibatalkan (_redo_), melihat elemen teratas _stack_ (_peek_), dan menampilkan seluruh riwayat perubahan (_display_). Sistem menggunakan dua _stack_ berbasis _linked list_ yang bekerja secara bersamaan.
 
 ---
 
@@ -73,28 +82,28 @@ Sistem _undo/redo text editor_ adalah aplikasi berbasis _Phyton_ yang mensimulas
 
 <table>
    <tr>
-      <th colspan="2" style="text-align: center; background-colour: #0147ab; colour: white;">
+      <th colspan="2" style="text-align: center;">
          ALUR SISTEM <i>UNDO / REDO</i> EDITOR
       </th>
    </tr>
    <tr>
-      <td style="font-weight: bold; background-colour: #57a0d3;"> INPUT </td>
+      <td> <b>INPUT</b> </td>
       <td> Teks terbaru dari pengguna, atau perintah <i>undo / redo / peek / display</i> </td>
    </tr>
    <tr>
-      <td style="font-weight: bold; background-colour: #57a0d3;"> PROSES (Tulis) </td>
+      <td> <b>PROSES (Tulis)</b> </td>
       <td> <i>Push</i> kondisi teks lama ke <i>undo stack</i> → reset <i>redo stack</i> → teks aktif diperbarui </td>
    </tr>
    <tr>
-      <td style="font-weight: bold; background-colour: #57a0d3;"> PROSES (<i>Undo</i>) </td>
+      <td> <b>PROSES (<i>Undo</i>)</b> </td>
       <td> <i>Push</i> teks aktif ke <i>redo stack</i> → <i>pop</i> dari <i>undo stack</i> → jadikan kondisi aktif </td>
    </tr>
    <tr>
-      <td style="font-weight: bold; background-colour: #57a0d3;"> PROSES (<i>Redo</i>) </td>
+      <td> <b>PROSES (<i>Redo</i>)</b> </td>
       <td> <i>Push</i> teks aktif ke <i>undo stack</i> → <i>pop</i> dari <i>redo stack</i> → jadikan kondisi aktif </td>
    </tr>
    <tr>
-      <td style="font-weight: bold; background-colour: #57a0d3;"> Output </td>
+      <td> <b>Output</b> </td>
       <td> Teks aktif terkini ditampilkan, beserta status <i>undo stack</i> dan <i>redo stack</i> </td>
    </tr>
 </table>
