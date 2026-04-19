@@ -65,10 +65,39 @@ Dalam implementasinya, _stack_ dan _queue_ dapat dibangun menggunakan _array_ ma
 ---
 
 ### 3.1 Deskrpsi Sistem
+Sistem _undo/redo text editor_ adalah aplikasi berbasis _Phyton_ yang mensimulasikan mekanisme riwayat pengeditan teks. Pengguna dapat menuliskan teks baru, membatalkan perubahan (_undo_), mengulangi perubahan yang dibatalkan (_redo_), melihat elemen teratas stack (_peek_), dan menampilkan seluruh riwayat perubahan (_display_). Sistem menggunakan dua _stack_ berbasis _linked list_ yang bekerja secara bersamaan.
 
 ---
 
 ### 3.2 Alur Sistem
+
+<table>
+   <tr>
+      <th colspan="2" style="text-align: center; background-colour: #0147ab; colour: white;">
+         ALUR SISTEM <i>UNDO / REDO</i> EDITOR
+      </th>
+   </tr>
+   <tr>
+      <td style="font-weight: bold; background-colour: #57a0d3;"> INPUT </td>
+      <td> Teks terbaru dari pengguna, atau perintah <i>undo / redo / peek / display</i> </td>
+   </tr>
+   <tr>
+      <td style="font-weight: bold; background-colour: #57a0d3;"> PROSES (Tulis) </td>
+      <td> <i>Push</i> kondisi teks lama ke <i>undo stack</i> → reset <i>redo stack</i> → teks aktif diperbarui </td>
+   </tr>
+   <tr>
+      <td style="font-weight: bold; background-colour: #57a0d3;"> PROSES (<i>Undo</i>) </td>
+      <td> <i>Push</i> teks aktif ke <i>redo stack</i> → <i>pop</i> dari <i>undo stack</i> → jadikan kondisi aktif </td>
+   </tr>
+   <tr>
+      <td style="font-weight: bold; background-colour: #57a0d3;"> PROSES (<i>Redo</i>) </td>
+      <td> <i>Push</i> teks aktif ke <i>undo stack</i> → <i>pop</i> dari <i>redo stack</i> → jadikan kondisi aktif </td>
+   </tr>
+   <tr>
+      <td style="font-weight: bold; background-colour: #57a0d3;"> Output </td>
+      <td> Teks aktif terkini ditampilkan, beserta status <i>undo stack</i> dan <i>redo stack</i> </td>
+   </tr>
+</table>
 
 ---
 
