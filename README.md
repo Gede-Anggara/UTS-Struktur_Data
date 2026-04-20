@@ -78,35 +78,7 @@ Sistem _undo/redo text editor_ adalah aplikasi berbasis _Phyton_ yang mensimulas
 
 ---
 
-### 3.2 Alur Sistem
-
-<table>
-   <tr>
-      <th colspan="2" style="text-align: center;">
-         ALUR SISTEM <i>UNDO / REDO</i> EDITOR
-      </th>
-   </tr>
-   <tr>
-      <td> <b>INPUT</b> </td>
-      <td> Teks terbaru dari pengguna, atau perintah <i>undo / redo / peek / display</i> </td>
-   </tr>
-   <tr>
-      <td> <b>PROSES (Tulis)</b> </td>
-      <td> <i>Push</i> kondisi teks lama ke <i>undo stack</i> → reset <i>redo stack</i> → teks aktif diperbarui </td>
-   </tr>
-   <tr>
-      <td> <b>PROSES (<i>Undo</i>)</b> </td>
-      <td> <i>Push</i> teks aktif ke <i>redo stack</i> → <i>pop</i> dari <i>undo stack</i> → jadikan kondisi aktif </td>
-   </tr>
-   <tr>
-      <td> <b>PROSES (<i>Redo</i>)</b> </td>
-      <td> <i>Push</i> teks aktif ke <i>undo stack</i> → <i>pop</i> dari <i>redo stack</i> → jadikan kondisi aktif </td>
-   </tr>
-   <tr>
-      <td> <b>Output</b> </td>
-      <td> Teks aktif terkini ditampilkan, beserta status <i>undo stack</i> dan <i>redo stack</i> </td>
-   </tr>
-</table>
+### 3.2 Flowchart
 
 ---
 
@@ -114,12 +86,15 @@ Sistem _undo/redo text editor_ adalah aplikasi berbasis _Phyton_ yang mensimulas
 
 ---
 
-### 3.4 Struktur Data
-
----
-
-### 3.5 Implementasi Operasi
+### 3.4 Implementasi Struktur Data
 
 ---
 
 ## BAB 4 — Kesimpulan
+
+Berdasarkan hasil perancangan dan implementasi Sistem Undo/Redo Text Editor menggunakan Stack berbasis Linked List di Python, dapat ditarik kesimpulan sebagai berikut:
+
+1. Rumusan masalah pertama terjawab: Konsep _Stack_ dengan prinsip LIFO berhasil diterapkan untuk mengimplementasikan mekanisme _Undo_ pada _text editor_. Elemen yang terakhir dimasukkan selalu menjadi yang pertama dibatalkan, sesuai dengan perilaku _Undo_ pada editor nyata seperti _VS Code_ maupun _Microsoft Word_.
+2. Rumusan masalah kedua terjawab: Dua _Stack_ yang bekerja sinkron berhasil mengelola navigasi riwayat dua arah. Saat _Undo_ dilakukan, kondisi teks berpindah ke Redo Stack; saat _Redo_ dilakukan, kondisi berpindah kembali ke _Undo Stack_, sepenuhnya sesuai dengan teori struktur data _Stack_.
+3. Rumusan masalah ketiga terjawab: Implementasi menggunakan _Linked List_ menjadikan kapasitas _stack_ dinamis tanpa batas. Program telah lulus beberapa test dan menghasilkan _output_ benar pada seluruh skenario pengujian.
+
