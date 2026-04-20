@@ -92,7 +92,7 @@ Sistem _undo/redo text editor_ adalah aplikasi berbasis _Phyton_ yang mensimulas
 
 ## BAB 4 — Kesimpulan
 
-Berdasarkan hasil perancangan dan implementasi Sistem Undo/Redo Text Editor menggunakan Stack berbasis Linked List di Python, dapat ditarik kesimpulan sebagai berikut:
+Berdasarkan hasil perancangan dan implementasi Sistem _Undo/Redo Text Editor_ menggunakan _Stack_ berbasis _Linked List_ di _Python_, dapat ditarik kesimpulan sebagai berikut:
 
 1. Rumusan masalah pertama terjawab: Konsep _Stack_ dengan prinsip LIFO berhasil diterapkan untuk mengimplementasikan mekanisme _Undo_ pada _text editor_. Elemen yang terakhir dimasukkan selalu menjadi yang pertama dibatalkan, sesuai dengan perilaku _Undo_ pada editor nyata seperti _VS Code_ maupun _Microsoft Word_.
 2. Rumusan masalah kedua terjawab: Dua _Stack_ yang bekerja sinkron berhasil mengelola navigasi riwayat dua arah. Saat _Undo_ dilakukan, kondisi teks berpindah ke Redo Stack; saat _Redo_ dilakukan, kondisi berpindah kembali ke _Undo Stack_, sepenuhnya sesuai dengan teori struktur data _Stack_.
