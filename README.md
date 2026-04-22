@@ -80,20 +80,62 @@ Sistem _undo/redo text editor_ adalah aplikasi berbasis _Phyton_ yang mensimulas
 
 ### 3.2 Flowchart
 
+<img width="991" height="293" alt="Flowchart" src="https://github.com/user-attachments/assets/c7b1f6a7-4b6c-4ed3-92eb-bbfae918ecf4" />
+
 ---
 
 ### 3.3 Pseudocode
+
+### Operasi TULIS
+def tulis(teks_baru): <br>
+    global teks_sekarang <br>
+    undo_stack.append(teks_sekarang) <br>
+    redo_stack.clear() <br>
+    teks_sekarang = teks_baru <br>
+
+### Operasi UNDO
+def undo(): <br>
+    global teks_sekarang <br>
+    if len(undo_stack) == 0: <br>
+        print("Error: Tidak ada yang bisa di-undo") <br>
+        return <br>
+        
+redo_stack.append(teks_sekarang) <br>
+teks_sekarang = undo_stack.pop() <br>
+
+
+### Operasi REDO
+def redo(): <br>
+    global teks_sekarang <br>
+    if len(redo_stack) == 0: <br>
+        print("Error: Tidak ada yang bisa di-redo") <br>
+        return <br>
+        
+undo_stack.append(teks_sekarang) <br>
+teks_sekarang = redo_stack.pop() <br>
+
+
+### Contoh penggunaan
+tulis("Hello") <br>
+tulis("Hello World") <br>
+print(teks_sekarang)  # Hello World <br>
+
+undo() <br>
+print(teks_sekarang)  # Hello <br>
+
+redo() <br>
+print(teks_sekarang)  # Hello World <br>
 
 ---
 
 ### 3.4 Implementasi Struktur Data
 
-Program mengimplementasikan 4 operasi wajib Stack berikut:
+Program mengimplementasikan 4 operasi wajib _Stack_ berikut:
 
-Push – dipanggil saat pengguna menulis/mengedit teks (menyimpan snapshot lama ke Undo Stack)
-Pop   – dipanggil saat Undo (dari Undo Stack) atau Redo (dari Redo Stack)
-Peek – menampilkan kondisi teratas Undo Stack dan Redo Stack tanpa mengubah isi
-Display – menampilkan seluruh isi Undo Stack dan Redo Stack beserta teks yang sedang aktif
+- Push: Dipanggil saat pengguna menulis/mengedit teks (menyimpan _snapshot_ lama ke _undo stack_)
+- Pop: Dipanggil saat _undo_ (dari _undo stack_) atau _redo_ (dari _redo stack_)
+- Peek: Menampilkan kondisi teratas _undo stack_ dan _redo stack_ tanpa mengubah isi
+- Display: Menampilkan seluruh isi _undo stack_ dan _redo stack_ beserta teks yang sedang aktif
 
 ## BAB 4 — Kesimpulan
 
