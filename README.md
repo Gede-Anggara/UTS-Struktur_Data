@@ -88,7 +88,12 @@ Sistem _undo/redo text editor_ adalah aplikasi berbasis _Phyton_ yang mensimulas
 
 ### 3.4 Implementasi Struktur Data
 
----
+Program mengimplementasikan 4 operasi wajib Stack berikut:
+
+Push – dipanggil saat pengguna menulis/mengedit teks (menyimpan snapshot lama ke Undo Stack)
+Pop   – dipanggil saat Undo (dari Undo Stack) atau Redo (dari Redo Stack)
+Peek – menampilkan kondisi teratas Undo Stack dan Redo Stack tanpa mengubah isi
+Display – menampilkan seluruh isi Undo Stack dan Redo Stack beserta teks yang sedang aktif
 
 ## BAB 4 — Kesimpulan
 
