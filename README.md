@@ -7,6 +7,10 @@ Semester Genap 2025/2026
 - I Gede Anggara Suryantara (2501010013)
 - Anak Agung Gede Anom Rangga Pratama (2501010017)
 
+## Presentasi PowerPoint (Canva)
+
+Link: https://canva.link/50gqv4daddqq1ey
+
 ## BAB 1 — Rumusan Masalah dan Solusi
 
 ---
@@ -86,45 +90,25 @@ Sistem _undo/redo text editor_ adalah aplikasi berbasis _Phyton_ yang mensimulas
 
 ### 3.3 Pseudocode
 
-### Operasi TULIS
-def tulis(teks_baru): <br>
-    global teks_sekarang <br>
-    undo_stack.append(teks_sekarang) <br>
-    redo_stack.clear() <br>
-    teks_sekarang = teks_baru <br>
+### Operasi TULIS:
+FUNCTION tulis (teks_baru): <br>
+   undo_stack.push(teks_sekarang) <br>
+simpan kondisi lama <br>
+   redo_stack.clear() <br>
+hapus jalur redo lama <br>
+   teks_sekarang = teks_baru <br>
 
-### Operasi UNDO
-def undo(): <br>
-    global teks_sekarang <br>
-    if len(undo_stack) == 0: <br>
-        print("Error: Tidak ada yang bisa di-undo") <br>
-        return <br>
-        
-redo_stack.append(teks_sekarang) <br>
-teks_sekarang = undo_stack.pop() <br>
+### Operasi UNDO:
+FUNCTION undo(): <br>
+   IF undo_stack kosong THEN tampilkan error; return <br>
+   redo_stack.push(teks_sekarang) <br>
+   teks_sekarang = undo_stack.pop() <br>
 
-
-### Operasi REDO
-def redo(): <br>
-    global teks_sekarang <br>
-    if len(redo_stack) == 0: <br>
-        print("Error: Tidak ada yang bisa di-redo") <br>
-        return <br>
-        
-undo_stack.append(teks_sekarang) <br>
-teks_sekarang = redo_stack.pop() <br>
-
-
-### Contoh penggunaan
-tulis("Hello") <br>
-tulis("Hello World") <br>
-print(teks_sekarang)  # Hello World <br>
-
-undo() <br>
-print(teks_sekarang)  # Hello <br>
-
-redo() <br>
-print(teks_sekarang)  # Hello World <br>
+### Operasi REDO:
+FUNCTION redo(): <br>
+   IF redo_stack kosong THEN tampilkan error; return <br>
+   undo_stack.push(teks_sekarang) <br>
+   teks_sekarang = redo_stack.pop() <br>
 
 ---
 
